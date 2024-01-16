@@ -1,6 +1,4 @@
-Prueba
+# Clase BDR | MCD
+###### Christian Garza
 
-
-Texto para 2do commit
-
-Bases de datos relacionales. MCD.
+Curso de la **Maestría en Ciencia de Datos** de la [Universidad Autónoma de Nuevo León] 

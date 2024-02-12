@@ -1,3 +1,5 @@
+CREATE database tarea4;
+use tarea4;
 create table if not exists data_consumer(
 	WalletUuid varchar(30) primary key,
 	Calc_ParentTransactionUuid VARCHAR(30),

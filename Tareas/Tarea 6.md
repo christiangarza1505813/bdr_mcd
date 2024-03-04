@@ -1,3 +1,5 @@
+# Tarea 6
+
 ## Consulta 1
 
 ### Frecuencia de transacciones por tipo de transaccion

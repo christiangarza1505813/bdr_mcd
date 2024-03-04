@@ -1,6 +1,6 @@
 # Tarea 7
 
-#### Primero veo una descripción de los datos para validar que esten en el formato correcto. 
+#### Primero veo una descripción de los datos para revisar que formato tiene cada variable. 
 #### En caso de requerir alguna corrección, hago las modificaciones necesarias. 
 ###### describe data_consumer ;
 ###### ALTER TABLE data_consumer

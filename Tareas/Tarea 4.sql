@@ -1,27 +1,27 @@
 CREATE database tarea4;
 use tarea4;
 create table if not exists data_consumer(
-	WalletUuid varchar(30) primary key,
-	Calc_ParentTransactionUuid VARCHAR(30),
+	WalletUuid varchar(40) primary key,
+	Calc_ParentTransactionUuid VARCHAR(40),
 	Amount float(24,2),
-	TransactionTypeDsEn VARCHAR(30),
+	TransactionTypeDsEn VARCHAR(40),
 	UpdatedAt datetime,
 	Returned int,
 	Attribute_1 VARCHAR(30),
 	Status VARCHAR(30)
 );
 
-create table if not exists IssuedCards(
-	WalletUuid varchar(30),
+create table if not exists Issued_Cards(
+	WalletUuid varchar(40),
 	foreign key (WalletUuid) references data_consumer(WalletUuid),
-	CardUuid varchar (30),
-	Status varchar (30),
+	CardUuid varchar (40),
+	Status varchar (40),
 	ProductId int,
 	CreatedAt datetime
 );
 
-create table if not exists WalletHistory(
-	WalletUuid varchar(30),
+create table if not exists Wallet_History(
+	WalletUuid varchar(40),
 	foreign key (WalletUuid) references data_consumer(WalletUuid),
 	UpdatedAt datetime
 );
@@ -137,10 +137,18 @@ VALUES
 ;
 	
 select * from data_consumer;
-select * from issuedcards;
-select * from wallethistory;
+select count(*) from data_consumer ;
+select * from issued_cards;
+select * from wallet_history;
 
 SELECT *
 FROM data_consumer dc
-INNER JOIN IssuedCards ic ON dc.WalletUuid = ic.WalletUuid
-where ic.Status = "ACTIVE";
+INNER JOIN Issued_Cards ic ON dc.WalletUuid = ic.WalletUuid
+where ic.Status = "ACTIVE" and dc.TransactionTypeDsEn = "Negative Loss";
+
+DELETE FROM Wallet_History;
+DELETE FROM issued_cards;
+DELETE FROM data_consumer;
+drop table Wallet_History ;
+drop table issued_cards ;
+drop table data_consumer ;
